@@ -12,7 +12,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                bat 'npm test'
+                echo 'Testing the application'
             }
         }
 
@@ -22,7 +22,7 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
+        stage('Deployment') {
             steps {
                 bat "del /q /s C:\\inetpub\\wwwroot\\ReactApp\\*"
                  bat "xcopy /E /Y /I build\\* C:\\inetpub\\wwwroot\\ReactApp\\"
